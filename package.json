@@ -1,0 +1,19 @@
+{
+  "name": "nodejs-rest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/naimaier/alura-rest-com-nodejs.git"
+  },
+  "author": "henrique naimaier",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/naimaier/alura-rest-com-nodejs/issues"
+  },
+  "homepage": "https://github.com/naimaier/alura-rest-com-nodejs#readme"
+}
