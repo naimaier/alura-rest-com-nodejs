@@ -1,7 +1,10 @@
 const express = require('express')
+const consign = require('consign')
 
 const app = express()
 
-app.listen(3000, () => console.log('Servidor rodando na porta 3000'))
+consign()
+    .include('controllers')
+    .into(app)
 
-app.get('/', (request, response) => response.send('Servidor rodando!'))
+app.listen(3000, () => console.log('Servidor rodando na porta 3000'))
