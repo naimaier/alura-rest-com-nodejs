@@ -39,7 +39,7 @@ class Atendimento {
                     response.status(400).json(erro)
                     // 400: Bad request. O Cliente mandou algum dado inválido
                 } else {
-                    response.status(201).json(resultados)
+                    response.status(201).json(atendimento)
                     // O 'resultados' mostra o insertId entre outros
                     // 201 created
                 }
@@ -84,7 +84,7 @@ class Atendimento {
             if (erro) {
                 response.status(400).json(erro)
             } else {
-                response.status(200).json(resultados)
+                response.status(200).json({...valores, id})
             }
         })
     }
@@ -96,7 +96,7 @@ class Atendimento {
             if (erro) {
                 response.status(400).json(erro)
             } else {
-                response.status(200).json(resultados)
+                response.status(200).json({id})
             }
         })
     }
