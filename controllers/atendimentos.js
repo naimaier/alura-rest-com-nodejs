@@ -16,5 +16,12 @@ module.exports = app => {
 
         Atendimento.adiciona(atendimento, response)
     })
+
+    app.patch('/atendimentos/:id', (request, response) => {
+        const id = parseInt(request.params.id)
+        const valores = request.body
+
+        Atendimento.altera(id, valores, response)
+    })
 }
 // Estamos exportando uma funcao que recebe app como parametro
