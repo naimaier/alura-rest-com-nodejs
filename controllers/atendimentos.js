@@ -6,9 +6,7 @@ module.exports = app => {
     app.post('/atendimentos', (request, response) => {
         const atendimento = request.body
 
-        Atendimento.adiciona(atendimento)
-        
-        response.send('POST atendimento')
+        Atendimento.adiciona(atendimento, response)
     })
 }
 // Estamos exportando uma funcao que recebe app como parametro

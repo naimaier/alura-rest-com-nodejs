@@ -2,7 +2,7 @@ const moment = require('moment')
 const conexao = require('../infraestrutura/conexao')
 
 class Atendimento {
-    adiciona(atendimento) {
+    adiciona(atendimento, response) {
         const dataCriacao = moment().format('YYYY-MM-DD HH:MM:SS')
         const data = moment(atendimento.data, 'DD/MM/YYYY').format('YYYY-MM-DD HH:MM:SS')
         const atendimentoDatado = {...atendimento, dataCriacao, data}
@@ -12,9 +12,12 @@ class Atendimento {
 
         conexao.query(sql, atendimentoDatado, (erro, resultados) => {
             if (erro) {
-                console.log(erro)
+                response.status(400).json(erro)
+                // 400: Bad request. O Cliente mandou algum dado inválido
             } else {
-                console.log(resultados)
+                response.status(201).json(resultados)
+                // O 'resultados' mostra o insertId entre outros
+                // 201 created
             }
         })
     }
